@@ -757,8 +757,7 @@ def _check_model_params(model_or_func, model_params):
     model_parameters = inspect.signature(init_func).parameters
 
     has_non_keyword_param = any(
-        param.kind in _NON_KEYWORD_PARAM_KINDS
-        for param in model_parameters.values()
+        param.kind in _NON_KEYWORD_PARAM_KINDS for param in model_parameters.values()
     )
 
     if has_non_keyword_param:
