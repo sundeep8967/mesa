@@ -255,9 +255,7 @@ def test_model_param_checks():
         ValueError,
         match=re.escape("Mesa's visualization requires the use of keyword arguments"),
     ):
-        _check_model_params(
-            ModelWithPositionalOnly(1), {"param1": 1, "param2": 10}
-        )
+        _check_model_params(ModelWithPositionalOnly(1), {"param1": 1, "param2": 10})
 
     # Test var-positional (*args) parameters raise ValueError (function and model instance)
     class ModelWithVarPositional:
@@ -275,7 +273,6 @@ def test_model_param_checks():
         match=re.escape("Mesa's visualization requires the use of keyword arguments"),
     ):
         _check_model_params(ModelWithVarPositional(), {"param1": 1})
-
 
 
 def test_model_creator():  # noqa: D103
